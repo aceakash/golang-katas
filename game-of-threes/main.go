@@ -19,8 +19,7 @@ func getAdjustment(value int) int {
 }
 
 func getSteps(start int) []step {
-	currentVal := start
-	steps := []step{}
+	currentVal, steps := start, []step{}
 	for currentVal > 1 {
 		adjustment := getAdjustment(currentVal)
 		steps = append(steps, step{currentVal, adjustment})
