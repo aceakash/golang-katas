@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type step struct {
 	value      int
 	adjustment int
@@ -28,5 +30,11 @@ func getSteps(start int) []step {
 }
 
 func main() {
-
+	for _, step := range getSteps(31337357) {
+		adjustmentStr := fmt.Sprint(step.adjustment)
+		if step.value == 1 {
+			adjustmentStr = ""
+		}
+		fmt.Println(step.value, adjustmentStr)
+	}
 }

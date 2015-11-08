@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"reflect"
 	"testing"
 )
@@ -23,11 +22,16 @@ var getStepsTests = []struct {
 		{2, 1},
 		{1, 0},
 	}},
+	{100, []step{
+		{100, -1},
+		{33, 0},
+		{11, 1},
+		{4, -1},
+		{1, 0},
+	}},
 }
 
 func TestGetSteps(t *testing.T) {
-
-	fmt.Println(getStepsTests)
 	for _, tt := range getStepsTests {
 		actual := getSteps(tt.start)
 		if !reflect.DeepEqual(actual, tt.steps) {
